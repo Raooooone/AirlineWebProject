@@ -1,0 +1,46 @@
+<div class="admin-dashboard-container">
+  
+    <aside class="sidebar">
+      <div class="sidebar-header">
+       
+        <h3>Account Pages</h3>
+        <ul>
+          <li>
+            <a routerLink="/profile">
+              <span class="material-icons">person</span> Profile
+            </a>
+          </li>
+          <li>
+            <a routerLink="/add-member">
+              <span class="material-icons">group_add</span> Add Member
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  
+    
+    <div class="main-container">
+      
+      <header class="dashboard-header">
+        
+        <div class="logo-container">
+          <img src="assets/logo.png" alt="Airline Logo" />
+          <span class="airline-name">Airline Name</span>
+        </div>
+  
+       
+        <div class="nav-buttons">
+          <button routerLink="/airline-management">Airline Management</button>
+          <button routerLink="/flight-management">Flight Management</button>
+          <button routerLink="/passenger-management">Passenger Management</button>
+          <button routerLink="/feedback-management">Feedback Management</button>
+        </div>
+      </header>
+  
+      <main class="content-area">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  

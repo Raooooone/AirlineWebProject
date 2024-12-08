@@ -1,0 +1,147 @@
+/* Home Component Styles */
+
+/* Container for the entire home page */
+.app-container {
+    position: relative;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 20px; /* Add padding for better spacing */
+    /* Semi-transparent background overlay */
+  }
+  
+  /* Background image styling */
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4); /* Darken background for better text visibility */
+  }
+  
+  /* Header containing logo and title */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5)); /* Shadow for logo */
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    margin-bottom: 30px;
+  }
+  
+  /* Buttons for navigation */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    background: linear-gradient(to right,  #d80303, #d80303);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right,  #d80303,  #d80303);
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Feedback Form Styles */
+  .feedback-form {
+    background-color: rgba(255, 255, 255, 0.95); /* White background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    margin-top: 20px; /* Add space between form and buttons */
+  }
+  
+  .feedback-form h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Input group styling */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #d80303;
+    outline: none;
+  }
+  
+  /* Submit button */
+  button[type='submit'] {
+    background: linear-gradient(to right,  #d80303,  #d80303);
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button[type='submit']:hover {
+    background: linear-gradient(to right,  #d80303,  #d80303);
+  }
+  
+  /* Media Query for responsiveness */
+  @media (max-height: 768px) {
+    .feedback-form {
+      margin-bottom: 20px;
+    }
+  }
+  

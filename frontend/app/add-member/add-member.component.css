@@ -1,0 +1,109 @@
+/* Conteneur principal centré et stylisé */
+.container {
+  max-width: 500px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Titre principal */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input, select et textarea */
+input,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Focus sur les champs */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Labels des champs */
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+/* Bouton principal */
+button {
+  background-color: #db1212;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #db1212;
+  box-shadow: 0 5px 15px #db1212;
+}
+
+/* Message d'alerte succès */
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Message d'alerte erreur */
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Effet sur le conteneur au survol */
+.container:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}

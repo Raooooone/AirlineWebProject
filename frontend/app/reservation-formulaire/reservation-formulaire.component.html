@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Book Your Ticket</h2>
+
+  <form (ngSubmit)="bookTicket()">
+    <label>Full Name</label>
+    <input type="text" [(ngModel)]="ticketForm.fullName" name="fullName" required />
+
+    <label>Passport</label>
+    <input type="text" [(ngModel)]="ticketForm.passport" name="passport" required />
+
+    <label>Mobile Number</label>
+    <input type="text" [(ngModel)]="ticketForm.mobileNumber" name="mobileNumber" required />
+
+    <label>Departure Date</label>
+    <input type="date" [(ngModel)]="ticketForm.flightDate" name="flightDate" required />
+
+    <label>Flight Time</label>
+    <select [(ngModel)]="ticketForm.flightTime" name="flightTime" required>
+      <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
+    </select>
+
+    <label>Seat Class</label>
+    <select [(ngModel)]="ticketForm.seatClass" name="seatClass" (change)="updatePrice()">
+      <option value="Economy">Economy</option>
+      <option value="Business">Business</option>
+      <option value="First Class">First Class</option>
+    </select>
+
+    <label>From</label>
+    <input type="text" [(ngModel)]="ticketForm.from" name="from" disabled />
+
+    <label>To</label>
+    <select [(ngModel)]="ticketForm.to" name="to" required>
+      <option value="France">France</option>
+      <option value="Germany">Germany</option>
+      <option value="USA">USA</option>
+      <option value="Canada">Canada</option>
+      <option value="Italy">Italy</option>
+      <option value="Spain">Spain</option>
+    </select>
+
+    <label>Price</label>
+    <input type="text" [value]="ticketForm.price | currency" disabled />
+
+    <button type="submit" [disabled]="!ticketForm.fullName || !ticketForm.passport || !ticketForm.mobileNumber || !ticketForm.to || !ticketForm.flightDate || !ticketForm.flightTime">Book Ticket</button>
+  </form>
+
+  <!-- Error and Success Messages -->
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+</div>

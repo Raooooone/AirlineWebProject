@@ -1,0 +1,64 @@
+<div class="login-signup-container">
+  <h2>{{ isSignUp ? 'Sign Up' : 'Login' }}</h2>
+
+  <!-- Error and Success Messages -->
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+
+  <!-- Login/Sign-Up Form -->
+  <form (ngSubmit)="isSignUp ? onSignUp() : onLogin()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        class="form-control"
+        placeholder="Enter your username"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        class="form-control"
+        placeholder="Enter your password"
+        required
+      />
+    </div>
+
+    <div *ngIf="isSignUp" class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        class="form-control"
+        placeholder="Confirm your password"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+      {{ isSignUp ? 'Sign Up' : 'Login' }}
+    </button>
+  </form>
+
+  <!-- Toggle between Login and Sign-Up -->
+  <div class="toggle-text">
+    <p *ngIf="!isSignUp" (click)="toggleSignUp()">Don't have an account? Sign Up</p>
+    <p *ngIf="isSignUp" (click)="toggleSignUp()">Already have an account? Login</p>
+  </div>
+
+  <!-- Link to Admin Login -->
+  <div class="admin-link">
+    <button (click)="navigateToAdminLogin()" class="btn btn-link">Admin Login</button>
+  </div>
+</div>

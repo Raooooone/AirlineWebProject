@@ -1,0 +1,160 @@
+
+/* General styling for the flight management container */
+.flight-management-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Title of the page */
+h2 {
+  text-align: center;
+  color: #b30000;  /* Red color for the title */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Button to toggle form visibility */
+.btn {
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+/* Primary button (Add New Flight / Cancel) */
+.btn-primary {
+  background-color: #b30000;  /* Red color */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #990000;  /* Darker red on hover */
+}
+
+/* Form container */
+.flight-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.flight-form h3 {
+  color: #b30000;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #b30000;  /* Red border on focus */
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #b30000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #990000;  /* Darker red on hover */
+}
+
+/* Table styling */
+.flight-list {
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #b30000;
+  color: white;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-warning {
+  background-color: #ff9900;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #cc7a00;
+}
+
+.btn-danger {
+  background-color: #b30000;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #990000;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .flight-management-container {
+    padding: 10px;
+  }
+
+  table th, table td {
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}

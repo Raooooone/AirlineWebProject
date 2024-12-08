@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Admin Profile</h2>
+
+  <!-- Displaying admin details if available -->
+  <div *ngIf="adminDetails; else errorTemplate">
+    <div class="profile-card">
+      <h3>{{ adminDetails.username }}</h3>
+      <p>Email: {{ adminDetails.email }}</p>
+      <p>Role: {{ adminDetails.role }}</p>
+      <p>Password: {{ adminDetails.password }}</p> <!-- Added password field -->
+    </div>
+  </div>
+
+  <!-- Error template to display if admin not found -->
+  <ng-template #errorTemplate>
+    <div class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </ng-template>
+</div>

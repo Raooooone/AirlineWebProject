@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="search-bar">
+      <input
+        [(ngModel)]="searchTerm"
+        (input)="searchAirlines()"
+        placeholder="Search by ID or Name of Airline"
+        class="search-input"
+      />
+    </div>
+
+    <div class="actions">
+      <button class="btn-add" (click)="openAddAirlineForm()">Add New Airline</button>
+    </div>
+  </div>
+
+  <!-- Airline Table -->
+  <table class="airline-table">
+    <thead>
+      <tr>
+        <th>Airline Name</th>
+        <th>Number of Flights</th>
+        <th>Date of Operation</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let airline of airlines">
+        <td>{{ airline.name }}</td>
+        <td>{{ airline.numberOfFlights }}</td>
+        <td>{{ airline.date | date }}</td>
+        <td>
+          <button class="btn-action" (click)="addFlight(airline.id)">Add Flight</button>
+          <button class="btn-action" (click)="removeFlight(airline.id)">Remove Flight</button>
+          <button class="btn-delete" (click)="deleteAirline(airline.id)">Delete Airline</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal for adding a new airline -->
+  <div class="modal" [ngClass]="{ show: isAddAirlineFormVisible }">
+    <div class="modal-content">
+      <h3>Add New Airline</h3>
+      <form (ngSubmit)="submitAddAirline()">
+        <label for="name">Airline Name:</label>
+        <input type="text" id="name" [(ngModel)]="newAirline.name" name="name" required />
+
+        <label for="flights">Number of Flights:</label>
+        <input type="number" id="flights" [(ngModel)]="newAirline.numberOfFlights" name="flights" required />
+
+        <label for="date">Date of Operation:</label>
+        <input type="date" id="date" [(ngModel)]="newAirline.date" name="date" required />
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" [(ngModel)]="newAirline.country" name="country" required />
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit">Add Airline</button>
+          <button type="button" class="btn-cancel" (click)="closeAddAirlineForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

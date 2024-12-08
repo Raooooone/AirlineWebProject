@@ -1,0 +1,46 @@
+<div class="app-container">
+
+    <img src="assets/2.jpg" alt="Airline Background" class="background-img" />
+    <div class="header">
+      <img src="assets/plane2.png" alt="Airline Logo" class="logo" />
+      <h1>{{ title }}</h1>
+    </div>
+  
+    <div class="button-container">
+      <button class="btn" (click)="navigateToLogin()">Login to Book</button>
+      <button class="btn" (click)="openFeedbackForm()">Give Your Feedback</button>
+    </div>
+  
+    <div *ngIf="showFeedbackForm" class="feedback-form">
+      <h2>Feedback Form</h2>
+      <form (ngSubmit)="submitFeedback()">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" [(ngModel)]="feedback.email" name="email" required />
+        </div>
+        <div class="input-group">
+          <label for="first-impression">First Impression</label>
+          <input type="text" id="first-impression" [(ngModel)]="feedback.firstImpression" name="firstImpression" required />
+        </div>
+        <div class="input-group">
+          <label for="suggestion">Suggestion</label>
+          <textarea id="suggestion" [(ngModel)]="feedback.suggestion" name="suggestion" rows="3" required></textarea>
+        </div>
+        <div class="input-group">
+          <label for="rating">Rating (0-10)</label>
+          <input type="number" id="rating" [(ngModel)]="feedback.rating" name="rating" min="0" max="10" required />
+        </div>
+        <div class="input-group">
+          <label for="service">Service Feedback</label>
+          <textarea id="service" [(ngModel)]="feedback.service" name="service" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Feedback</button>
+      </form>
+    </div>
+  
+
+    <div *ngIf="feedbackSubmitted" class="thank-you-message">
+      <h3>Thank you for your feedback!</h3>
+    </div>
+  </div>
+  

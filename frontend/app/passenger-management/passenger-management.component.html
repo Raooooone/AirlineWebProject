@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Passenger Management</h2>
+
+  <!-- Search bar -->
+  <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchPassengers()" placeholder="Search by PID or Name" class="search-bar" />
+
+  <!-- Passenger Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>PID</th>
+        <th>Full Name</th>
+        <th>Passport</th>
+        <th>Mobile</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Flight Booking</th>
+        <th>Seat Class</th>
+        <th>Flight Date</th>
+        <th>Flight Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let passenger of filteredPassengers">
+        <td>{{ passenger.pid }}</td>
+        <td>{{ passenger.fullName }}</td>
+        <td>{{ passenger.passport }}</td>
+        <td>{{ passenger.mobileNumber }}</td>
+        <td>{{ passenger.dob }}</td>
+        <td>{{ passenger.gender }}</td>
+        <td>{{ passenger.flightNumber }}: {{ passenger.from }} → {{ passenger.to }}</td>
+        <td>{{ passenger.seatClass }}</td>
+        <td>{{ passenger.flightDate }}</td>
+        <td>{{ passenger.flightTime }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Export to PDF button -->
+  <button (click)="exportToPDF()">Export to PDF</button>
+</div>

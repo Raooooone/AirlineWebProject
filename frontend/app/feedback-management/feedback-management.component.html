@@ -1,0 +1,44 @@
+<div class="container">
+  <!-- Header Section -->
+  <div class="header">
+    <h2 class="page-title">Feedback Management</h2>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input 
+        [(ngModel)]="searchTerm" 
+        (input)="searchFeedback()" 
+        placeholder="Search by User Email or Feedback" 
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <!-- Feedback Table -->
+  <table class="flight-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>User Email</th>
+        <th>First Impression</th>
+        <th>Suggestion</th>
+        <th>Rating</th>
+        <th>Service</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feedback of feedbackList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ feedback.email }}</td>
+        <td>{{ feedback.firstImpression }}</td>
+        <td>{{ feedback.suggestion }}</td>
+        <td>{{ feedback.rating }}</td>
+        <td>{{ feedback.service }}</td>
+        <td>
+          <button class="btn-remove" (click)="deleteFeedback(feedback.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
